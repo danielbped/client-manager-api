@@ -17,6 +17,20 @@ router.get('/', async (_req, res) => {
   };
 });
 
+router.get('/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const result = await ClientService.findByQuery(query);
+
+    return res.status(StatusCodes.OK).json(result);
+  } catch (err: any) {
+    console.error(err.message);
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      message: err.message || 'Internal server error'
+    });
+  };
+});
+
 router.post('/', async (req, res) => {
   try {
     const { name, phone, email } = req.body;
@@ -29,7 +43,7 @@ router.post('/', async (req, res) => {
       message: err.message || 'Internal server error'
     });
   };
-})
+});
 
 const client = (root: Router) => {
   root.use('/client', router)

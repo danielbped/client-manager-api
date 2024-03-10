@@ -5,6 +5,9 @@ export default {
   async list() {
     return ClientModel.list();
   },
+  async findByQuery(query: string) {
+    return ClientModel.findByQuery(query);
+  },
   async create({ name, phone, email }: Partial<Client>) {
     if (email) {
       const client = await ClientModel.findByEmail(email);

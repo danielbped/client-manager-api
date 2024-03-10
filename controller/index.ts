@@ -14,8 +14,9 @@ const findAvailableRoutes = () => {
         func(router);
       }
     } catch (error) {
+      console.error(error)
       console.log(`Encountered Error initializing routes from ${routeFile}`);
-    }
+    };
   });
 };
 
