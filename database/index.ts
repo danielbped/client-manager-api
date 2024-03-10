@@ -25,17 +25,18 @@ const execute = async (query: string) => {
 const connect = () => {
   const query = `
     CREATE TABLE IF NOT EXISTS "users" (
-	    "id" SERIAL,
+	    "id" VARCHAR(100) NOT NULL,
 	    "name" VARCHAR(100) NOT NULL,
-      "email" VARCHAR(100) NOT NULL,
+      "email" VARCHAR(100) NOT NULL UNIQUE,
       "password" VARCHAR(100) NOT NULL,
 	    PRIMARY KEY ("id")
     );
     
     CREATE TABLE IF NOT EXISTS "clients" (
-	    "id" SERIAL,
+	    "id" VARCHAR(100) NOT NULL,
 	    "name" VARCHAR(100) NOT NULL,
-      "email" VARCHAR(100) NOT NULL,
+      "email" VARCHAR(100) UNIQUE,
+      "phone" VARCHAR(100),
 	    PRIMARY KEY ("id")
     );`;
 
