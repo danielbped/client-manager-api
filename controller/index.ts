@@ -6,15 +6,19 @@ import { readdirSync } from 'fs';
 
 const routesDirectory = require('path').resolve(`${__dirname}`);
 
-readdirSync(routesDirectory).forEach((routeFile: any) => {
-  try {
-    if (!routeFile.endsWith('.ts')) {
-      const func = Object.values(require(`${routesDirectory}/${routeFile}`))[0] as Function;
-      func(router);
+const findAvailableRoutes = () => {
+  readdirSync(routesDirectory).forEach((routeFile: any) => {
+    try {
+      if (!routeFile.endsWith('.ts')) {
+        const func = Object.values(require(`${routesDirectory}/${routeFile}`))[0] as Function;
+        func(router);
+      }
+    } catch (error) {
+      console.log(`Encountered Error initializing routes from ${routeFile}`);
     }
-  } catch (error) {
-    console.log(`Encountered Error initializing routes from ${routeFile}`);
-  }
-});
+  });
+};
+
+findAvailableRoutes();
 
 export default router;
