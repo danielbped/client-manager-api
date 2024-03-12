@@ -33,8 +33,8 @@ router.get('/:query', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { name, phone, email } = req.body;
-    const result = await ClientService.create({ name, phone, email });
+    const { name, phone, email, coordinate } = req.body;
+    const result = await ClientService.create({ name, phone, email, coordinate });
 
     return res.status(StatusCodes.CREATED).json(result);
   } catch (err: any) {

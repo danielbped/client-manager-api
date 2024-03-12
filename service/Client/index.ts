@@ -8,15 +8,17 @@ export default {
   async findByQuery(query: string) {
     return ClientModel.findByQuery(query);
   },
-  async create({ name, phone, email }: Partial<Client>) {
-    if (email) {
-      const client = await ClientModel.findByEmail(email);
+  async create(client: Partial<Client>) {
+    if (client.email) {
+      const clientFound = await ClientModel.findByEmail(client.email);
 
-      if (client) {
+      if (clientFound) {
         throw new Error('Email already in use');
       };
     };
 
-    return ClientModel.create({ name, phone, email });
+    client.coordinate?.replace(',', '.');
+
+    return ClientModel.create(client);
   }
 }

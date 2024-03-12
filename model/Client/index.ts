@@ -37,14 +37,15 @@ export default {
     try {
       await client.query(`
         INSERT INTO public.clients(
-          id, name, email, phone)
-          VALUES ('${uuid()}', '${data.name}', '${data.email}', '${data.phone}');
+          id, name, email, phone, coordinate)
+          VALUES ('${uuid()}', '${data.name}', '${data.email}', '${data.phone}', '${data.coordinate}');
         `);
       
       return {
         name: data.name,
         email: data.email,
         phone: data.phone,
+        coordinate: data.coordinate,
       };
     } catch (err: any) {
       console.error(err);

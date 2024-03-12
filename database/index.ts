@@ -1,5 +1,6 @@
 import { Client } from 'pg';
 import dotenv from 'dotenv';
+import { uuid } from 'uuidv4';
 
 dotenv.config();
 
@@ -32,11 +33,16 @@ const connect = () => {
 	    PRIMARY KEY ("id")
     );
     
+    INSERT INTO public.users(
+      id, name, email, password)
+      VALUES ('${uuid()}', 'Admin', 'admin@email.com', 's3nh4_f0rt3');
+
     CREATE TABLE IF NOT EXISTS "clients" (
 	    "id" VARCHAR(100) NOT NULL,
 	    "name" VARCHAR(100) NOT NULL,
       "email" VARCHAR(100) UNIQUE,
       "phone" VARCHAR(100),
+      "coordinate" VARCHAR(100),
 	    PRIMARY KEY ("id")
     );`;
 
