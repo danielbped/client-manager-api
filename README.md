@@ -1,6 +1,6 @@
 # Client Manager
 
-Trata-se da API de uma aplicação de gestão de clientes, sendo possível visualizar e adicionar novos clientes, também como filtrar por nome ou e-mail, e visualizar a melhor rota para abordagem dos clientes com relação à coordenadas X e Y, tendo a empresa como marco (0, 0). A API conta com rotas de Login, busca por todos os clientes e usuários, criação de um novo cliente e usuário, busca por clientes e usuários a partir de uma query, podendo ser nome ou e-mail, e busca por clientes ordenando pela ordem de rotas ideal para abordagem.
+Trata-se da API de uma aplicação de gestão de clientes, sendo possível visualizar e adicionar novos clientes, também como filtrar por nome ou e-mail, e visualizar a melhor rota para abordagem dos clientes com relação às coordenadas X e Y, tendo a empresa como marco (0, 0). A API conta com rotas de Login, busca por todos os clientes e usuários, criação de um novo cliente e usuário, busca por clientes e usuários a partir de uma query, podendo ser nome ou e-mail, e busca por clientes ordenando pela ordem de rotas ideal para abordagem.
 
 # Sumário
 - [Tecnologias utilizadas](#tecnologias)
