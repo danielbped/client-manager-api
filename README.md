@@ -1,0 +1,11 @@
+# Tecnologias utilizadas <a name="tecnologias"></a>
+- [**Node JS**](https://nodejs.org/en/)
+- [**Express**](https://expressjs.com/pt-br/)
+- [**PostgreSQL**](https://www.postgresql.org/)
+- [**Https Status Code**](https://www.npmjs.com/package/http-status-codes)
+- [**dotenv**](https://www.npmjs.com/package/dotenv)
+- [**Body Parser**](https://www.npmjs.com/package/body-parser)
+- [**Insomnia**](https://insomnia.rest/download)
+- [**TypeScript**](https://www.typescriptlang.org/)
+- [**CORS**](https://github.com/expressjs/cors)
+- [**UUID**](https://github.com/thenativeweb/uuidv4)
