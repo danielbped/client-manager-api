@@ -61,6 +61,7 @@ Trata-se da API de uma aplicação de gestão de clientes, sendo possível visua
         ADMIN_EMAIL='email_padrao_para_o_admin'
   
   > ⚠️ Lembre de trocar os dados para os dados do seu banco de dados ⚠️
+  > ⚠️ Por padrão será criado um usuário Admin com o e-mail e senha fornecidos em ADMIN_EMAIL e ADMIN_PASSWORD, respectivamente ⚠️
 
   - Pronto, agora o projeto está pronto para ser rodado localmente, utilizando o comando **npm start**:
 
