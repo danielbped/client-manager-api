@@ -17,6 +17,19 @@ router.get('/', async (_req, res) => {
   };
 });
 
+router.get('/route', async (_req, res) => {
+  try {
+    const result = await ClientService.listBestRoute();
+
+    return res.status(StatusCodes.OK).json(result);
+  } catch (err: any) {
+    console.error(err.message);
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      message: err.message || 'Internal server error'
+    });
+  };
+});
+
 router.get('/:query', async (req, res) => {
   try {
     const { query } = req.params;

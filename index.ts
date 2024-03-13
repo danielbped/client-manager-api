@@ -14,7 +14,6 @@ app.use(cors({
 }))
 app.use(router);
 
-
 db.connect();
 app.get('/health', async (_req: any, res: any) => {
   res.status(200).send({ message: 'OK' });

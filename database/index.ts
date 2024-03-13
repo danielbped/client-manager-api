@@ -35,7 +35,7 @@ const connect = () => {
     
     INSERT INTO public.users(
       id, name, email, password)
-      VALUES ('${uuid()}', 'Admin', 'admin@email.com', 's3nh4_f0rt3');
+      VALUES ('${uuid()}', 'Admin', '${process.env.ADMIN_EMAIL}', '${process.env.ADMIN_PASSWORD}');
 
     CREATE TABLE IF NOT EXISTS "clients" (
 	    "id" VARCHAR(100) NOT NULL,
