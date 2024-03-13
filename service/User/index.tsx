@@ -23,11 +23,7 @@ export default {
     if (user.email && user.password) {
       const UserFound = await UserModel.findByEmail(user.email);
 
-      if (!UserFound) {
-        throw new Error('Email not found');
-      };
-
-      if (user.password === UserFound.password) {
+      if (UserFound && user.password === UserFound.password) {
         return true;
       } return false;
     }

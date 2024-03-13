@@ -50,6 +50,10 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const result = await UserService.login({ email, password });
 
+    if (!result) {
+      return res.status(StatusCodes.NOT_FOUND).json(result);
+    }
+
     return res.status(StatusCodes.OK).json(result);
   } catch (err: any) {
     console.error(err);

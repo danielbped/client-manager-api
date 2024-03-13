@@ -5,7 +5,7 @@ import { User } from "../../entities/User";
 export default {
   async list() {
     try {
-      const result = await client.query('SELECT * FROM public.users');
+      const result = await client.query('SELECT id, name, email FROM public.users');
   
       return {
         result: result.rows,
@@ -19,7 +19,7 @@ export default {
   async findByQuery(query: string) {
     try {
       const result = await client.query(`
-        SELECT * FROM public.users
+        SELECT id, name, email FROM public.users
           WHERE name LIKE LOWER('%${query}%')
           OR email LIKE LOWER('%${query}%')
       `);
@@ -37,7 +37,7 @@ export default {
     try {
       await client.query(`
         INSERT INTO public.users(
-          id, name, email, phone, coordinate)
+          id, name, email, password)
           VALUES ('${uuid()}', '${data.name}', '${data.email}', '${data.password}');
         `);
       
@@ -53,7 +53,7 @@ export default {
   async findByEmail(email: string) {
     try {
       const result = await client.query(`
-        SELECT * FROM public.users where email = '${email}'
+        SELECT id, name, email FROM public.users where email = '${email}'
       `);
 
       return result.rows[0];
