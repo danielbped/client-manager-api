@@ -53,7 +53,7 @@ export default {
   async findByEmail(email: string) {
     try {
       const result = await client.query(`
-        SELECT id, name, email FROM public.users where email = '${email}'
+        SELECT * FROM public.users where email = '${email}'
       `);
 
       return result.rows[0];
